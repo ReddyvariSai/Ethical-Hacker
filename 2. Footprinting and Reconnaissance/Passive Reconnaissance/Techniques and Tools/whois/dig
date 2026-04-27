@@ -1,0 +1,23 @@
+
+┌──(sai㉿kalki)-[~]
+└─$ dig h4cker.org
+
+; <<>> DiG 9.20.20-1-Debian <<>> h4cker.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44250
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;h4cker.org.                    IN      A
+
+;; ANSWER SECTION:
+h4cker.org.             3461    IN      A       185.199.108.153
+h4cker.org.             3461    IN      A       185.199.110.153
+h4cker.org.             3461    IN      A       185.199.111.153
+h4cker.org.             3461    IN      A       185.199.109.153
+
+;; Query time: 35 msec
+;; SERVER: 10.255.255.254#53(10.255.255.254) (UDP)
+;; WHEN: Mon Apr 27 12:02:00 IST 2026
+;; MSG SIZE  rcvd: 92
