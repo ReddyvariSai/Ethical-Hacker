@@ -81,21 +81,7 @@ The toolkit simulates real-world attack scenarios and defensive validation, maki
 
 ---
 
-## 📂 Repository Structure
 
-```bash
-kali-penetration-testing-toolkit/
-│
-├── reconnaissance/        # OSINT and information gathering
-├── scanning/              # Nmap and enumeration scripts
-├── exploitation/          # Exploit modules and payloads
-├── post-exploitation/     # Privilege escalation techniques
-├── automation-scripts/    # Bash/Python automation
-├── wordlists/             # Password and directory lists
-└── reports/               # Sample scan and assessment reports
-```
-
----
 
 ## 🚀 Getting Started
 
